@@ -1,0 +1,5 @@
+site_name: My Secret Wiki
+docs_dir: cuchuflainn
+theme:
+  name: material
+
