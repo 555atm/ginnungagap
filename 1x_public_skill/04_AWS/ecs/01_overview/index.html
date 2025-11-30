@@ -760,6 +760,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5. 初心者がまず覚えるべきポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 主要な概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 実行環境の選択
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 セキュリティとアクセス制御
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 デプロイ時の設定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -786,6 +836,34 @@
     
   
     ECS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_%E3%80%90old%E3%80%91managedconsole_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECS マネージドコンソール構築手順
   
 
     
@@ -8627,6 +8705,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="5. 初心者がまず覚えるべきポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 主要な概念
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 実行環境の選択
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 セキュリティとアクセス制御
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4 デプロイ時の設定
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -8647,11 +8775,103 @@
 
 
 <h1 id="ecs">ECS 概要</h1>
+<ul>
+<li>ECS（Elastic Container Service）は、AWSが提供するコンテナオーケストレーションサービスです。</li>
+<li>Dockerコンテナを簡単に実行、スケール、管理できるフルマネージドサービスです。</li>
+</ul>
 <h2 id="1">1. サービスの役割</h2>
+<ul>
+<li><strong>コンテナの実行環境の提供</strong>: Dockerコンテナを実行するためのクラスター環境を提供</li>
+<li><strong>自動スケーリング</strong>: アプリケーションの負荷に応じてコンテナ数を自動的に調整</li>
+<li><strong>タスク定義による管理</strong>: コンテナの設定（CPU、メモリ、イメージ、環境変数など）をタスク定義として管理</li>
+<li><strong>サービスによる継続実行</strong>: 指定した数のタスクを常に実行し続けるサービス機能</li>
+<li><strong>ロードバランシング統合</strong>: ALBやNLBと統合して、複数のコンテナにトラフィックを分散</li>
+</ul>
 <h2 id="2">2. 主なユースケース</h2>
+<ul>
+<li><strong>マイクロサービスアーキテクチャ</strong>: 複数のコンテナ化されたサービスを管理</li>
+<li><strong>Webアプリケーション</strong>: フロントエンド、バックエンド、APIサーバーなどのコンテナ実行</li>
+<li><strong>CI/CDパイプライン</strong>: 継続的デプロイメントの自動化</li>
+<li><strong>バッチ処理</strong>: 定期的に実行されるジョブのコンテナ実行</li>
+<li><strong>既存アプリケーションのコンテナ化</strong>: オンプレミスやEC2上のアプリをコンテナ化して移行</li>
+</ul>
 <h2 id="3">3. 他サービスとの関係</h2>
+<ul>
+<li><strong>EC2</strong>: コンテナを実行するホストとして使用（ECS on EC2）</li>
+<li><strong>Fargate</strong>: サーバーレスでコンテナを実行（ECS on Fargate）</li>
+<li><strong>ECR</strong>: コンテナイメージの保存・管理</li>
+<li><strong>ALB/NLB</strong>: ロードバランシングと統合</li>
+<li><strong>CloudWatch</strong>: ログ、メトリクス、アラームの監視</li>
+<li><strong>IAM</strong>: タスクやサービスへのアクセス制御</li>
+<li><strong>VPC</strong>: ネットワーク分離とセキュリティ</li>
+<li><strong>Auto Scaling</strong>: タスク数の自動スケーリング</li>
+</ul>
 <h2 id="4">4. 料金のざっくりイメージ</h2>
+<ul>
+<li><strong>ECS on EC2</strong>: EC2インスタンスの料金のみ（ECS自体は無料）</li>
+<li><strong>ECS on Fargate</strong>: </li>
+<li>vCPU: 約$0.04048/時間（1vCPUあたり）</li>
+<li>メモリ: 約$0.004445/GB/時間</li>
+<li>例: 1vCPU + 2GBメモリ = 約$0.04937/時間（約$35/月）</li>
+</ul>
 <h2 id="5">5. 初心者がまず覚えるべきポイント</h2>
+<h3 id="51">5.1 主要な概念</h3>
+<ol>
+<li><strong>クラスター</strong></li>
+<li>サービス・コンテナが稼働するホスト群（論理的なグループ）</li>
+<li>Fargateでは意識することが少ない、サービスの入れ物に近いイメージ</li>
+<li>
+<p>コンテナを実行するための基盤となる環境</p>
+</li>
+<li>
+<p><strong>タスク定義</strong></p>
+</li>
+<li>コンテナの設定（イメージ、CPU、メモリ、環境変数など）を定義するテンプレート</li>
+<li>一言で言うと、Docker Composeにおける<code>docker-compose.yml</code>のイメージ</li>
+<li>
+<p>コンテナ（アプリケーション）に関する情報を定める</p>
+</li>
+<li>
+<p><strong>タスク</strong></p>
+</li>
+<li>タスク定義から起動されたコンテナの実行インスタンス</li>
+<li>1つのタスクに1つ以上のコンテナを含めることができる</li>
+<li>
+<p>タスクが実際にアプリケーションを実行する単位</p>
+</li>
+<li>
+<p><strong>サービス</strong></p>
+</li>
+<li>タスク定義をもとにタスク（コンテナ）の起動、起動数の調整などを行う</li>
+<li>指定した数のタスクを常に実行し続ける機能</li>
+<li>必要なタスク数を自動的に増減させる（Auto Scaling）</li>
+<li>ロードバランサにタスク（コンテナ）をターゲットとして登録・解除</li>
+</ol>
+<h3 id="52">5.2 実行環境の選択</h3>
+<ol>
+<li><strong>Fargate vs EC2</strong></li>
+<li><strong>Fargate</strong>: サーバー管理不要、簡単に始められる、サーバーレスでコンテナを実行</li>
+<li><strong>EC2</strong>: より細かい制御が可能、コスト最適化の余地あり、自分でEC2インスタンスを管理</li>
+</ol>
+<h3 id="53">5.3 セキュリティとアクセス制御</h3>
+<ol>
+<li><strong>タスクロールとタスク実行ロール</strong></li>
+<li>IAMロールで、タスクが他のAWSサービスにアクセスする権限を制御</li>
+<li><strong>タスクロール</strong>: アプリケーションがAWSサービスにアクセスするためのロール</li>
+<li><strong>タスク実行ロール</strong>: ECSエージェントがECRからイメージを取得するためのロール</li>
+</ol>
+<h3 id="54">5.4 デプロイ時の設定</h3>
+<ol>
+<li><strong>デプロイ時の重要な設定</strong></li>
+<li><strong>VPC</strong>: タスクをECSクラスター上にデプロイする時点で決められる</li>
+<li><strong>ALB/NLB</strong>: ロードバランサを紐付けるかどうかも、この時点で決められる</li>
+<li><strong>デプロイの流れ</strong>:<ol>
+<li>タスク定義で、コンテナ（アプリケーション）に関する情報を定める</li>
+<li>デプロイで、対象タスク・ネットワークに関する情報を定める</li>
+<li>それらを元に、ECSクラスター上にリソースを配置する</li>
+</ol>
+</li>
+</ol>
 
 
 
