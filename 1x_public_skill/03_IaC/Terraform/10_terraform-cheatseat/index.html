@@ -23,7 +23,7 @@
     
     
       
-        <title>terraform-cheatseat - My Secret Wiki</title>
+        <title>Terraform Cheat Sheet - My Secret Wiki</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terraform-cheatseat" class="md-skip">
+        <a href="#terraform-cheat-sheet" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              terraform-cheatseat
+              Terraform Cheat Sheet
             
           </span>
         </div>
@@ -545,6 +545,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform Cheat Sheet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -552,7 +570,7 @@
   <span class="md-ellipsis">
     
   
-    terraform-cheatseat
+    Terraform Cheat Sheet
   
 
     
@@ -561,6 +579,636 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本コマンド（これだけ覚えれば95%動ける）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本コマンド（これだけ覚えれば95%動ける）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コマンド詳細
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="コマンド詳細">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform init
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-fmt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform fmt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform destroy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部分的な操作（よく使う）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部分的な操作（よく使う）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        既存コードから一部だけ構築したい場合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        作成済みリソースのうち、一部だけ削除したい場合
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="作成済みリソースのうち、一部だけ削除したい場合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法1: -targetで削除
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法2: コードから削除してapply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法3: stateから除外（リソースは残す）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よく使う確認系コマンド
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よく使う確認系コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-state-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform state list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-state-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform state show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state操作コマンド
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="state操作コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースの移動・名前変更
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースをstateから削除（実リソースは残す）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースのインポート
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stateの確認とバックアップ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークスペース管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よく使うオプション
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よく使うオプション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数の指定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他の便利なオプション
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実務で重要なポイント
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="実務で重要なポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-terraformstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Terraformは「state」に基づき差分を作る
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. planの差分記号を正しく読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. initが必要になるタイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-statedevstgprod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. stateの分離（dev/stg/prod）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よくあるエラーと対処法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よくあるエラーと対処法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-state-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. State lock取得エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-provider-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Provider not found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. リソースが見つからない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 依存関係エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事項（最重要）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="注意事項（最重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ いつもと違うメッセージが出たら絶対にapplyしない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ チェックリスト
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        便利なエイリアス設定
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="まとめ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terraformの本質
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成功の鍵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事故を防ぐ心構え
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3022,7 +3670,7 @@
   <span class="md-ellipsis">
     
   
-    Main services
+    Design
   
 
     
@@ -3035,6 +3683,117 @@
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/Design/AWS%E8%A8%AD%E8%A8%88%E3%81%AE%E5%8F%82%E8%80%83%E6%9B%B8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS設計の参考資料
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/Design/%E7%9B%AE%E6%AC%A1%E3%81%AE%E5%8F%A9%E3%81%8D%E5%8F%B0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0. AWS設計の前提知識（総論）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Main services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3059,17 +3818,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1" id="__nav_2_4_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1" id="__nav_2_4_3_1_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    01 NW(AWS)
+    01 NW
   
 
     
@@ -3080,12 +3839,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
-    01 NW(AWS)
+    01 NW
   
 
           </label>
@@ -3098,7 +3857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/001_AWS%E3%81%AENW%E6%A7%8B%E6%88%90%E3%81%AE%E6%AD%A3%E8%A7%A3/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/001_AWS%E3%81%AENW%E6%A7%8B%E6%88%90%E3%81%AE%E6%AD%A3%E8%A7%A3/" class="md-nav__link">
         
   
   
@@ -3126,7 +3885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/0xx_NW%28AWS%29/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/0xx_NW%28AWS%29/" class="md-nav__link">
         
   
   
@@ -3162,10 +3921,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_3" id="__nav_2_4_2_1_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_3" id="__nav_2_4_3_1_3_label" tabindex="0">
             
   
   
@@ -3183,8 +3942,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3201,7 +3960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/client-vpn/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/client-vpn/01_overview/" class="md-nav__link">
         
   
   
@@ -3229,7 +3988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/client-vpn/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/client-vpn/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3257,7 +4016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/client-vpn/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/client-vpn/05_operations/" class="md-nav__link">
         
   
   
@@ -3301,10 +4060,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_4" id="__nav_2_4_2_1_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_4" id="__nav_2_4_3_1_4_label" tabindex="0">
             
   
   
@@ -3322,8 +4081,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3340,7 +4099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/cloudfront/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/cloudfront/01_overview/" class="md-nav__link">
         
   
   
@@ -3368,7 +4127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/cloudfront/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/cloudfront/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3396,7 +4155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/cloudfront/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/cloudfront/05_operations/" class="md-nav__link">
         
   
   
@@ -3440,10 +4199,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_5" id="__nav_2_4_2_1_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_5" id="__nav_2_4_3_1_5_label" tabindex="0">
             
   
   
@@ -3461,8 +4220,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3479,7 +4238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/direct-connect/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/direct-connect/01_overview/" class="md-nav__link">
         
   
   
@@ -3507,7 +4266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/direct-connect/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/direct-connect/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3535,7 +4294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/direct-connect/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/direct-connect/05_operations/" class="md-nav__link">
         
   
   
@@ -3579,17 +4338,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_6" id="__nav_2_4_2_1_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_6" id="__nav_2_4_3_1_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Elb
+    elb ALB+NLB+CLB
   
 
     
@@ -3600,12 +4359,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_6">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Elb
+    elb ALB+NLB+CLB
   
 
           </label>
@@ -3618,7 +4377,221 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/elb/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/%F0%9F%93%84%20aws_elb_comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS ELB（ALB / NLB / CLB）比較 &amp; 選定ガイド
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1_6_2" id="__nav_2_4_3_1_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_2_4_3_1_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ALB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/ALB/01_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ALB 概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/ALB/02_managedconsole_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elastic Load Balancing（ALB/NLB）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/ALB/05_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Elastic Load Balancing（ALB/NLB）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1_6_3" id="__nav_2_4_3_1_6_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NLB
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_2_4_3_1_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NLB
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/NLB/01_overview/" class="md-nav__link">
         
   
   
@@ -3646,7 +4619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/elb/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/NLB/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3674,7 +4647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/elb/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/elb_ALB%2BNLB%2BCLB/NLB/05_operations/" class="md-nav__link">
         
   
   
@@ -3682,6 +4655,153 @@
     
   
     Elastic Load Balancing（ALB/NLB）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_1_7" id="__nav_2_4_3_1_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global accelerator
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Global accelerator
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/global-accelerator/01_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Accelerator 概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/global-accelerator/02_managedconsole_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Accelerator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/01_NW/global-accelerator/05_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Accelerator
   
 
     
@@ -3718,10 +4838,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_8" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_7" id="__nav_2_4_2_1_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_8" id="__nav_2_4_3_1_8_label" tabindex="0">
             
   
   
@@ -3739,8 +4859,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_7">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3757,7 +4877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/igw/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/igw/01_overview/" class="md-nav__link">
         
   
   
@@ -3785,7 +4905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/igw/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/igw/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3813,7 +4933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/igw/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/igw/05_operations/" class="md-nav__link">
         
   
   
@@ -3857,10 +4977,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_8" id="__nav_2_4_2_1_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_9" id="__nav_2_4_3_1_9_label" tabindex="0">
             
   
   
@@ -3878,8 +4998,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_8">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3896,7 +5016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/nat-gateway/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/nat-gateway/01_overview/" class="md-nav__link">
         
   
   
@@ -3924,7 +5044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/nat-gateway/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/nat-gateway/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -3952,7 +5072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/nat-gateway/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/nat-gateway/05_operations/" class="md-nav__link">
         
   
   
@@ -3996,10 +5116,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_10" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_9" id="__nav_2_4_2_1_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_10" id="__nav_2_4_3_1_10_label" tabindex="0">
             
   
   
@@ -4017,8 +5137,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_9">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4035,7 +5155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/privatelink/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/privatelink/01_overview/" class="md-nav__link">
         
   
   
@@ -4063,7 +5183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/privatelink/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/privatelink/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4091,7 +5211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/privatelink/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/privatelink/05_operations/" class="md-nav__link">
         
   
   
@@ -4135,10 +5255,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_11" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_10" id="__nav_2_4_2_1_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_11" id="__nav_2_4_3_1_11_label" tabindex="0">
             
   
   
@@ -4156,8 +5276,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_10">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4174,7 +5294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route-table/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route-table/01_overview/" class="md-nav__link">
         
   
   
@@ -4202,7 +5322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route-table/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route-table/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4230,7 +5350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route-table/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route-table/05_operations/" class="md-nav__link">
         
   
   
@@ -4274,10 +5394,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_12" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_11" id="__nav_2_4_2_1_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_12" id="__nav_2_4_3_1_12_label" tabindex="0">
             
   
   
@@ -4295,8 +5415,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_11">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4313,7 +5433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route53/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route53/01_overview/" class="md-nav__link">
         
   
   
@@ -4341,7 +5461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route53/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route53/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4369,7 +5489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/route53/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/route53/05_operations/" class="md-nav__link">
         
   
   
@@ -4413,10 +5533,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_13" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_12" id="__nav_2_4_2_1_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_13" id="__nav_2_4_3_1_13_label" tabindex="0">
             
   
   
@@ -4434,8 +5554,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_12">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_13">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4452,7 +5572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/site-to-site-vpn/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/site-to-site-vpn/01_overview/" class="md-nav__link">
         
   
   
@@ -4480,7 +5600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/site-to-site-vpn/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/site-to-site-vpn/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4508,7 +5628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/site-to-site-vpn/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/site-to-site-vpn/05_operations/" class="md-nav__link">
         
   
   
@@ -4552,10 +5672,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_13" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_14" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_13" id="__nav_2_4_2_1_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_14" id="__nav_2_4_3_1_14_label" tabindex="0">
             
   
   
@@ -4573,8 +5693,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_13">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4591,7 +5711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/subnet/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/subnet/01_overview/" class="md-nav__link">
         
   
   
@@ -4619,7 +5739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/subnet/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/subnet/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4647,7 +5767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/subnet/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/subnet/05_operations/" class="md-nav__link">
         
   
   
@@ -4691,10 +5811,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_14" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_15" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_14" id="__nav_2_4_2_1_14_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_15" id="__nav_2_4_3_1_15_label" tabindex="0">
             
   
   
@@ -4712,8 +5832,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_14">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_15">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4730,7 +5850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/transit-gateway/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/transit-gateway/01_overview/" class="md-nav__link">
         
   
   
@@ -4758,7 +5878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/transit-gateway/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/transit-gateway/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4786,7 +5906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/transit-gateway/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/transit-gateway/05_operations/" class="md-nav__link">
         
   
   
@@ -4830,10 +5950,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_15" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_16" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_15" id="__nav_2_4_2_1_15_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_16" id="__nav_2_4_3_1_16_label" tabindex="0">
             
   
   
@@ -4851,8 +5971,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_15">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_16">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4869,7 +5989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc/01_overview/" class="md-nav__link">
         
   
   
@@ -4897,7 +6017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -4925,7 +6045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc/05_operations/" class="md-nav__link">
         
   
   
@@ -4969,10 +6089,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_1_16" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_1_17" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_1_16" id="__nav_2_4_2_1_16_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_1_17" id="__nav_2_4_3_1_17_label" tabindex="0">
             
   
   
@@ -4990,8 +6110,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_1_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_1_16">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_1_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_1_17">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5008,7 +6128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc-endpoint/01_overview/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc-endpoint/01_overview/" class="md-nav__link">
         
   
   
@@ -5036,7 +6156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc-endpoint/02_managedconsole_setup/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc-endpoint/02_managedconsole_setup/" class="md-nav__link">
         
   
   
@@ -5064,7 +6184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/01_NW%28AWS%29/vpc-endpoint/05_operations/" class="md-nav__link">
+      <a href="../../../04_AWS/main-services/01_NW/vpc-endpoint/05_operations/" class="md-nav__link">
         
   
   
@@ -5116,10 +6236,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2" id="__nav_2_4_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2" id="__nav_2_4_3_2_label" tabindex="0">
             
   
   
@@ -5137,8 +6257,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5219,10 +6339,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_3" id="__nav_2_4_2_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_3" id="__nav_2_4_3_2_3_label" tabindex="0">
             
   
   
@@ -5240,8 +6360,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5302,10 +6422,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_4" id="__nav_2_4_2_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_4" id="__nav_2_4_3_2_4_label" tabindex="0">
             
   
   
@@ -5323,8 +6443,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5441,10 +6561,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_5" id="__nav_2_4_2_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_5" id="__nav_2_4_3_2_5_label" tabindex="0">
             
   
   
@@ -5462,8 +6582,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5580,10 +6700,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_6" id="__nav_2_4_2_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_6" id="__nav_2_4_3_2_6_label" tabindex="0">
             
   
   
@@ -5601,8 +6721,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_6">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5719,10 +6839,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_7" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_7" id="__nav_2_4_2_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_7" id="__nav_2_4_3_2_7_label" tabindex="0">
             
   
   
@@ -5740,8 +6860,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_7">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -5886,10 +7006,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_8" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_8" id="__nav_2_4_2_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_8" id="__nav_2_4_3_2_8_label" tabindex="0">
             
   
   
@@ -5907,8 +7027,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_8">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6025,10 +7145,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_2_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_2_9" id="__nav_2_4_2_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_2_9" id="__nav_2_4_3_2_9_label" tabindex="0">
             
   
   
@@ -6046,8 +7166,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_2_9">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_2_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6172,10 +7292,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_3" id="__nav_2_4_2_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_3" id="__nav_2_4_3_3_label" tabindex="0">
             
   
   
@@ -6193,8 +7313,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_3">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6219,10 +7339,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_3_1" id="__nav_2_4_2_3_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_3_1" id="__nav_2_4_3_3_1_label" tabindex="0">
             
   
   
@@ -6240,8 +7360,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_3_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6358,10 +7478,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_3_2" id="__nav_2_4_2_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_3_2" id="__nav_2_4_3_3_2_label" tabindex="0">
             
   
   
@@ -6379,8 +7499,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_3_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6497,10 +7617,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_3_3" id="__nav_2_4_2_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_3_3" id="__nav_2_4_3_3_3_label" tabindex="0">
             
   
   
@@ -6518,8 +7638,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_3_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6636,10 +7756,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_3_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_3_4" id="__nav_2_4_2_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_3_4" id="__nav_2_4_3_3_4_label" tabindex="0">
             
   
   
@@ -6657,8 +7777,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_3_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_3_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_3_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6783,10 +7903,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_4" id="__nav_2_4_2_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_4" id="__nav_2_4_3_4_label" tabindex="0">
             
   
   
@@ -6804,8 +7924,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_4">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6830,10 +7950,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_4_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_4_1" id="__nav_2_4_2_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_4_1" id="__nav_2_4_3_4_1_label" tabindex="0">
             
   
   
@@ -6851,8 +7971,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_4_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_4_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -6969,10 +8089,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_4_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_4_2" id="__nav_2_4_2_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_4_2" id="__nav_2_4_3_4_2_label" tabindex="0">
             
   
   
@@ -6990,8 +8110,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_4_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7108,10 +8228,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_4_3" id="__nav_2_4_2_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_4_3" id="__nav_2_4_3_4_3_label" tabindex="0">
             
   
   
@@ -7129,8 +8249,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_4_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7247,10 +8367,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_4_4" id="__nav_2_4_2_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_4_4" id="__nav_2_4_3_4_4_label" tabindex="0">
             
   
   
@@ -7268,8 +8388,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_4_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7394,10 +8514,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_5" id="__nav_2_4_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_5" id="__nav_2_4_3_5_label" tabindex="0">
             
   
   
@@ -7415,8 +8535,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_5">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7441,10 +8561,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_5_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_5_1" id="__nav_2_4_2_5_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_5_1" id="__nav_2_4_3_5_1_label" tabindex="0">
             
   
   
@@ -7462,8 +8582,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_5_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_5_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_5_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7580,10 +8700,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_5_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_5_2" id="__nav_2_4_2_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_5_2" id="__nav_2_4_3_5_2_label" tabindex="0">
             
   
   
@@ -7601,8 +8721,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_5_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_5_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7719,10 +8839,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_5_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_5_3" id="__nav_2_4_2_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_5_3" id="__nav_2_4_3_5_3_label" tabindex="0">
             
   
   
@@ -7740,8 +8860,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_5_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -7858,10 +8978,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_5_4" id="__nav_2_4_2_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_5_4" id="__nav_2_4_3_5_4_label" tabindex="0">
             
   
   
@@ -7879,8 +8999,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_5_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8005,10 +9125,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6" id="__nav_2_4_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6" id="__nav_2_4_3_6_label" tabindex="0">
             
   
   
@@ -8026,8 +9146,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8052,10 +9172,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6_1" id="__nav_2_4_2_6_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6_1" id="__nav_2_4_3_6_1_label" tabindex="0">
             
   
   
@@ -8073,8 +9193,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8191,10 +9311,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6_2" id="__nav_2_4_2_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6_2" id="__nav_2_4_3_6_2_label" tabindex="0">
             
   
   
@@ -8212,8 +9332,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8330,10 +9450,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6_3" id="__nav_2_4_2_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6_3" id="__nav_2_4_3_6_3_label" tabindex="0">
             
   
   
@@ -8351,8 +9471,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8469,10 +9589,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6_4" id="__nav_2_4_2_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6_4" id="__nav_2_4_3_6_4_label" tabindex="0">
             
   
   
@@ -8490,8 +9610,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8608,10 +9728,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_6_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_6_5" id="__nav_2_4_2_6_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_6_5" id="__nav_2_4_3_6_5_label" tabindex="0">
             
   
   
@@ -8629,8 +9749,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_6_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_6_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8755,10 +9875,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7" id="__nav_2_4_2_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7" id="__nav_2_4_3_7_label" tabindex="0">
             
   
   
@@ -8776,8 +9896,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8802,10 +9922,149 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7_1" id="__nav_2_4_2_7_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7_1" id="__nav_2_4_3_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognito
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cognito
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/09_Security%2BIdentity/cognito/01_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognito 概要
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/09_Security%2BIdentity/cognito/02_managedconsole_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_AWS/main-services/09_Security%2BIdentity/cognito/05_operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cognito
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_3_7_2" id="__nav_2_4_3_7_2_label" tabindex="0">
             
   
   
@@ -8823,8 +10082,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_7_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -8941,10 +10200,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7_2" id="__nav_2_4_2_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7_3" id="__nav_2_4_3_7_3_label" tabindex="0">
             
   
   
@@ -8962,8 +10221,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9080,10 +10339,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7_3" id="__nav_2_4_2_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7_4" id="__nav_2_4_3_7_4_label" tabindex="0">
             
   
   
@@ -9101,8 +10360,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9219,10 +10478,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7_4" id="__nav_2_4_2_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7_5" id="__nav_2_4_3_7_5_label" tabindex="0">
             
   
   
@@ -9240,8 +10499,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9358,10 +10617,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_7_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_7_6" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_7_5" id="__nav_2_4_2_7_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_7_6" id="__nav_2_4_3_7_6_label" tabindex="0">
             
   
   
@@ -9379,8 +10638,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_7_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_7_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_7_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9505,10 +10764,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_8" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_8" id="__nav_2_4_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_8" id="__nav_2_4_3_8_label" tabindex="0">
             
   
   
@@ -9526,8 +10785,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_8">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9552,10 +10811,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_8_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_8_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_8_1" id="__nav_2_4_2_8_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_8_1" id="__nav_2_4_3_8_1_label" tabindex="0">
             
   
   
@@ -9573,8 +10832,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_8_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_8_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_8_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9699,10 +10958,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9" id="__nav_2_4_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9" id="__nav_2_4_3_9_label" tabindex="0">
             
   
   
@@ -9720,8 +10979,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9746,10 +11005,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9_1" id="__nav_2_4_2_9_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9_1" id="__nav_2_4_3_9_1_label" tabindex="0">
             
   
   
@@ -9767,8 +11026,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_9_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9_1">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9829,10 +11088,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9_2" id="__nav_2_4_2_9_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9_2" id="__nav_2_4_3_9_2_label" tabindex="0">
             
   
   
@@ -9850,8 +11109,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_9_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -9968,10 +11227,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9_3" id="__nav_2_4_2_9_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9_3" id="__nav_2_4_3_9_3_label" tabindex="0">
             
   
   
@@ -9989,8 +11248,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_9_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10107,10 +11366,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9_4" id="__nav_2_4_2_9_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9_4" id="__nav_2_4_3_9_4_label" tabindex="0">
             
   
   
@@ -10128,8 +11387,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_9_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10246,10 +11505,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_9_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_9_5" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_9_5" id="__nav_2_4_2_9_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_9_5" id="__nav_2_4_3_9_5_label" tabindex="0">
             
   
   
@@ -10267,8 +11526,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_9_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_9_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_9_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_9_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10393,10 +11652,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_10" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_10" id="__nav_2_4_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_10" id="__nav_2_4_3_10_label" tabindex="0">
             
   
   
@@ -10414,8 +11673,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10440,149 +11699,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_10_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_10_1" id="__nav_2_4_2_10_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cognito
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_10_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Cognito
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/19_Governance%2BConfig/cognito/01_overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cognito 概要
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/19_Governance%2BConfig/cognito/02_managedconsole_setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cognito
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/19_Governance%2BConfig/cognito/05_operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cognito
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4_2_10_2" id="__nav_2_4_2_10_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_10_1" id="__nav_2_4_3_10_1_label" tabindex="0">
             
   
   
@@ -10600,8 +11720,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_10_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10_2">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_10_1">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10718,10 +11838,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_10_3" id="__nav_2_4_2_10_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_10_2" id="__nav_2_4_3_10_2_label" tabindex="0">
             
   
   
@@ -10739,8 +11859,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_10_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10_3">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_10_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10857,10 +11977,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_10_4" id="__nav_2_4_2_10_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_10_3" id="__nav_2_4_3_10_3_label" tabindex="0">
             
   
   
@@ -10878,8 +11998,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_10_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10_4">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_10_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -10996,10 +12116,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_10_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3_10_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_2_10_5" id="__nav_2_4_2_10_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_3_10_4" id="__nav_2_4_3_10_4_label" tabindex="0">
             
   
   
@@ -11017,8 +12137,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_2_10_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_10_5">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_3_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_3_10_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -11128,145 +12248,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_2_11" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_4_2_11" id="__nav_2_4_2_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Global accelerator
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_2_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_2_11">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Global accelerator
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/global-accelerator/01_overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Accelerator 概要
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/global-accelerator/02_managedconsole_setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Accelerator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../04_AWS/main-services/global-accelerator/05_operations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Global Accelerator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -11290,10 +12271,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
             
   
   
@@ -11311,8 +12292,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -19704,6 +20685,625 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#95" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        基本コマンド（これだけ覚えれば95%動ける）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基本コマンド（これだけ覚えれば95%動ける）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        コマンド詳細
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="コマンド詳細">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform init
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-fmt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform fmt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform validate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform apply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-destroy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform destroy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部分的な操作（よく使う）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="部分的な操作（よく使う）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        既存コードから一部だけ構築したい場合
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        作成済みリソースのうち、一部だけ削除したい場合
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="作成済みリソースのうち、一部だけ削除したい場合">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法1: -targetで削除
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法2: コードから削除してapply
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        方法3: stateから除外（リソースは残す）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よく使う確認系コマンド
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よく使う確認系コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform-state-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform state list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-state-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform state show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform show
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terraform-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        terraform graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state操作コマンド
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="state操作コマンド">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースの移動・名前変更
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースをstateから削除（実リソースは残す）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リソースのインポート
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stateの確認とバックアップ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ワークスペース管理
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よく使うオプション
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よく使うオプション">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        変数の指定
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        その他の便利なオプション
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実務で重要なポイント
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="実務で重要なポイント">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-terraformstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Terraformは「state」に基づき差分を作る
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. planの差分記号を正しく読む
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-init" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. initが必要になるタイミング
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-statedevstgprod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. stateの分離（dev/stg/prod）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        トラブルシューティング
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="トラブルシューティング">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        よくあるエラーと対処法
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="よくあるエラーと対処法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-state-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. State lock取得エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-provider-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Provider not found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. リソースが見つからない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 依存関係エラー
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        注意事項（最重要）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="注意事項（最重要）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚠️ いつもと違うメッセージが出たら絶対にapplyしない
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ チェックリスト
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        便利なエイリアス設定
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        まとめ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="まとめ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terraform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terraformの本質
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        成功の鍵
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        事故を防ぐ心構え
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考リンク
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -19719,20 +21319,539 @@
 
 
 
-<h1 id="terraform-cheatseat">terraform-cheatseat</h1>
-<p>軽く勉強してある前提</p>
-<h1 id="_1"></h1>
-<p>これだけ覚えれば95%動ける。</p>
-<p>terraform init     # 初期化（providerダウンロード）
-terraform plan     # 変更点の確認
-terraform apply    # 変更の反映
-terraform destroy  # 全削除</p>
-<p>+α：fmt / validate</p>
-<p>terraform fmt
-terraform validate</p>
-<h1 id="_2">注意事項</h1>
-<p>いつもと同じメッセージかよく英文を確認。</p>
-<p>見慣れないメッセージが出ているのに、見過ごして進めないように。</p>
+<h1 id="terraform-cheat-sheet">Terraform Cheat Sheet</h1>
+<p><strong>対象</strong>: Terraformの基本を軽く勉強済みの方向け</p>
+<p><strong>重要</strong>: Terraformは「ディレクトリ単位」で実行するツール。<code>main.tf</code>や<code>*.tf</code>があるディレクトリで操作します。</p>
+<pre><code class="language-bash">cd ./terraform/nagios  # Terraformのコードがあるディレクトリに移動
+</code></pre>
+<hr />
+<h2 id="95">基本コマンド（これだけ覚えれば95%動ける）</h2>
+<pre><code class="language-bash">terraform init       # 初回/provider追加/変更時必須（provider DL、backend設定）
+terraform fmt        # コード整形（チーム必須）
+terraform validate   # 文法チェック（plan前に推奨）
+terraform plan       # 変更確認（-/+再作成に注意！apply前必須）
+terraform apply      # 実インフラ反映
+terraform destroy    # 全リソース削除（本番禁止）
+</code></pre>
+<h3 id="_1">コマンド詳細</h3>
+<h4 id="terraform-init"><code>terraform init</code></h4>
+<ul>
+<li><strong>用途</strong>: 初回またはprovider/module追加・変更時に必ず実行</li>
+<li><strong>処理内容</strong>:</li>
+<li>providerのダウンロード（<code>.terraform/</code>に保存）</li>
+<li>backendの設定（S3など）</li>
+<li>moduleのダウンロード</li>
+<li><strong>実行タイミング</strong>:</li>
+<li>プロジェクト初回</li>
+<li>providerのバージョン変更</li>
+<li>新しいmodule追加</li>
+<li>backend設定変更</li>
+</ul>
+<pre><code class="language-bash"># 基本
+terraform init
+
+# backendの再設定
+terraform init -reconfigure
+
+# moduleのアップグレード
+terraform init -upgrade
+</code></pre>
+<h4 id="terraform-fmt"><code>terraform fmt</code></h4>
+<ul>
+<li><strong>用途</strong>: コードの自動整形（チームでは必須）</li>
+<li><strong>実行タイミング</strong>: コミット前、PR作成前</li>
+</ul>
+<pre><code class="language-bash"># カレントディレクトリを整形
+terraform fmt
+
+# 再帰的に整形
+terraform fmt -recursive
+
+# チェックのみ（CI/CDで使用）
+terraform fmt -check
+</code></pre>
+<h4 id="terraform-validate"><code>terraform validate</code></h4>
+<ul>
+<li><strong>用途</strong>: 文法チェック（構文エラーの早期発見）</li>
+<li><strong>実行タイミング</strong>: plan前、CI/CDパイプライン</li>
+</ul>
+<pre><code class="language-bash">terraform validate
+</code></pre>
+<h4 id="terraform-plan"><code>terraform plan</code></h4>
+<ul>
+<li><strong>用途</strong>: 変更点の確認（最重要コマンド）</li>
+<li><strong>注意</strong>: 破壊的変更（<code>-/+</code>）が無いか目視チェック必須</li>
+<li><strong>実行タイミング</strong>: apply前に必ず実行</li>
+</ul>
+<pre><code class="language-bash"># 基本
+terraform plan
+
+# 特定の変数ファイルを指定
+terraform plan -var-file=&quot;prod.tfvars&quot;
+
+# 出力を保存
+terraform plan -out=plan.out
+
+# 特定リソースのみ確認
+terraform plan -target=aws_instance.web
+</code></pre>
+<h4 id="terraform-apply"><code>terraform apply</code></h4>
+<ul>
+<li><strong>用途</strong>: 変更を実インフラに反映</li>
+<li><strong>注意</strong>: plan結果を必ず確認してから実行</li>
+</ul>
+<pre><code class="language-bash"># 基本（確認プロンプトあり）
+terraform apply
+
+# 確認なし（CI/CDでのみ使用）
+terraform apply -auto-approve
+
+# 保存したplanを適用
+terraform apply plan.out
+
+# 変数ファイルを指定
+terraform apply -var-file=&quot;prod.tfvars&quot;
+</code></pre>
+<h4 id="terraform-destroy"><code>terraform destroy</code></h4>
+<ul>
+<li><strong>用途</strong>: 現在のstateで管理している全リソースを削除</li>
+<li><strong>警告</strong>: 本番環境では絶対に実行しない</li>
+</ul>
+<pre><code class="language-bash"># 基本
+terraform destroy
+
+# 確認なし（検証環境のみ）
+terraform destroy -auto-approve
+
+# 特定リソースのみ削除
+terraform destroy -target=aws_instance.test
+</code></pre>
+<hr />
+<h2 id="_2">部分的な操作（よく使う）</h2>
+<h3 id="_3">既存コードから一部だけ構築したい場合</h3>
+<p><code>-target</code>オプションで特定リソースのみを操作します。</p>
+<pre><code class="language-bash"># 特定リソースのみplan
+terraform plan -target=aws_instance.web
+
+# 特定リソースのみapply
+terraform apply -target=aws_instance.web
+
+# 複数リソースを指定
+terraform apply \
+  -target=aws_instance.web \
+  -target=aws_security_group.web
+
+# モジュール全体を指定
+terraform apply -target=module.vpc
+</code></pre>
+<p><strong>注意点</strong>:
+- 依存関係は自動で含まれる
+- 多用すると整合性が崩れるリスクあり
+- 本番環境では慎重に使用</p>
+<h3 id="_4">作成済みリソースのうち、一部だけ削除したい場合</h3>
+<h4 id="1-target">方法1: <code>-target</code>で削除</h4>
+<pre><code class="language-bash"># 特定リソースのみ削除
+terraform destroy -target=aws_instance.test
+
+# 確認
+terraform state list
+</code></pre>
+<h4 id="2-apply">方法2: コードから削除してapply</h4>
+<pre><code class="language-bash"># 1. .tfファイルからリソース定義を削除
+# 2. planで削除されることを確認
+terraform plan
+
+# 3. 削除を実行
+terraform apply
+</code></pre>
+<h4 id="3-state">方法3: stateから除外（リソースは残す）</h4>
+<pre><code class="language-bash"># リソースをTerraform管理から外す
+terraform state rm aws_instance.legacy
+
+# 確認
+terraform state list
+</code></pre>
+<hr />
+<h2 id="_5">よく使う確認系コマンド</h2>
+<h3 id="terraform-state-list"><code>terraform state list</code></h3>
+<p>管理中のリソース一覧を表示</p>
+<pre><code class="language-bash"># 全リソース表示
+terraform state list
+
+# 特定パターンで絞り込み
+terraform state list | grep aws_instance
+</code></pre>
+<p><strong>使用例</strong>:
+- 手動削除後にstateに残っている問題を確認
+- 管理対象リソースの確認
+- インポート前の確認</p>
+<h3 id="terraform-state-show"><code>terraform state show</code></h3>
+<p>特定リソースの詳細情報を表示</p>
+<pre><code class="language-bash"># リソースの詳細を表示
+terraform state show aws_instance.web
+
+# 特定の属性のみ確認
+terraform state show aws_instance.web | grep private_ip
+</code></pre>
+<h3 id="terraform-output"><code>terraform output</code></h3>
+<p>出力値の表示</p>
+<pre><code class="language-bash"># 全ての出力を表示
+terraform output
+
+# 特定の出力のみ表示
+terraform output alb_dns_name
+
+# JSON形式で出力
+terraform output -json
+</code></pre>
+<p><strong>使用例</strong>:
+- ALB/NLBのDNS名取得
+- RDSエンドポイント確認
+- 他のツールとの連携</p>
+<h3 id="terraform-show"><code>terraform show</code></h3>
+<p>現在のstateまたはplanファイルの内容を表示</p>
+<pre><code class="language-bash"># 現在のstate内容を表示
+terraform show
+
+# planファイルの内容を表示
+terraform show plan.out
+
+# JSON形式で出力
+terraform show -json
+</code></pre>
+<h3 id="terraform-graph"><code>terraform graph</code></h3>
+<p>リソースの依存関係をグラフ化</p>
+<pre><code class="language-bash"># DOT形式で出力
+terraform graph
+
+# 画像化（Graphviz必要）
+terraform graph | dot -Tpng &gt; graph.png
+</code></pre>
+<hr />
+<h2 id="state">state操作コマンド</h2>
+<h3 id="_6">リソースの移動・名前変更</h3>
+<pre><code class="language-bash"># リソースをstate内で移動
+terraform state mv aws_instance.old aws_instance.new
+
+# モジュール間で移動
+terraform state mv module.old.aws_instance.web module.new.aws_instance.web
+</code></pre>
+<h3 id="state_1">リソースをstateから削除（実リソースは残す）</h3>
+<pre><code class="language-bash"># 管理から外す
+terraform state rm aws_instance.legacy
+
+# 複数削除
+terraform state rm aws_instance.test1 aws_instance.test2
+</code></pre>
+<h3 id="_7">リソースのインポート</h3>
+<pre><code class="language-bash"># 既存リソースをstateに追加
+terraform import aws_instance.web i-1234567890abcdef0
+
+# モジュール内のリソースをインポート
+terraform import module.vpc.aws_vpc.main vpc-12345678
+</code></pre>
+<h3 id="state_2">stateの確認とバックアップ</h3>
+<pre><code class="language-bash"># stateをローカルにダウンロード
+terraform state pull &gt; terraform.tfstate.backup
+
+# stateをアップロード（危険！）
+terraform state push terraform.tfstate
+
+# backendからstateを更新
+terraform refresh
+</code></pre>
+<hr />
+<h2 id="_8">ワークスペース管理</h2>
+<p>複数環境（dev/stg/prod）を同じコードで管理する方法</p>
+<pre><code class="language-bash"># ワークスペース一覧
+terraform workspace list
+
+# 新規作成
+terraform workspace new dev
+terraform workspace new prod
+
+# 切り替え
+terraform workspace select dev
+
+# 現在のワークスペース確認
+terraform workspace show
+
+# 削除
+terraform workspace delete dev
+</code></pre>
+<p><strong>使用例</strong>:</p>
+<pre><code class="language-hcl"># main.tf
+locals {
+  env = terraform.workspace
+  instance_type = terraform.workspace == &quot;prod&quot; ? &quot;t3.medium&quot; : &quot;t3.micro&quot;
+}
+
+resource &quot;aws_instance&quot; &quot;web&quot; {
+  instance_type = local.instance_type
+  tags = {
+    Environment = local.env
+  }
+}
+</code></pre>
+<hr />
+<h2 id="_9">よく使うオプション</h2>
+<h3 id="_10">変数の指定</h3>
+<pre><code class="language-bash"># コマンドラインで指定
+terraform apply -var=&quot;instance_type=t3.micro&quot;
+
+# 変数ファイルを指定
+terraform apply -var-file=&quot;prod.tfvars&quot;
+
+# 複数の変数ファイル
+terraform apply -var-file=&quot;common.tfvars&quot; -var-file=&quot;prod.tfvars&quot;
+
+# 環境変数で指定
+export TF_VAR_instance_type=&quot;t3.micro&quot;
+terraform apply
+</code></pre>
+<h3 id="_11">その他の便利なオプション</h3>
+<pre><code class="language-bash"># 並列実行数を変更（デフォルト10）
+terraform apply -parallelism=20
+
+# ログレベルを変更
+TF_LOG=DEBUG terraform apply
+
+# 特定のログのみ出力
+TF_LOG=TRACE terraform apply 2&gt;&amp;1 | grep -i error
+
+# 状態のロックを無効化（緊急時のみ）
+terraform apply -lock=false
+</code></pre>
+<hr />
+<h2 id="_12">実務で重要なポイント</h2>
+<h3 id="1-terraformstate">1. Terraformは「state」に基づき差分を作る</h3>
+<p>3つの要素の整合性が重要:
+- <strong>コード</strong> (<code>*.tf</code>ファイル)
+- <strong>実インフラ</strong> (AWS/Azure/GCPなど)
+- <strong>state</strong> (<code>terraform.tfstate</code>、前回の状態)</p>
+<p><strong>問題例</strong>:
+- 手動でAWSコンソールからリソースを削除 → stateとの不整合
+- 別の人が同時にapply → state競合
+- stateファイルの喪失 → 全リソースが孤立</p>
+<p><strong>対策</strong>:
+- S3などリモートbackendを使用
+- state lockingを有効化（DynamoDB）
+- 手動変更を避ける</p>
+<hr />
+<h3 id="2-plan">2. planの差分記号を正しく読む</h3>
+<table>
+<thead>
+<tr>
+<th>記号</th>
+<th>意味</th>
+<th>注意度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>作成</td>
+<td>低</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>削除</td>
+<td><strong>高</strong></td>
+</tr>
+<tr>
+<td><code>~</code></td>
+<td>更新（in-place）</td>
+<td>中</td>
+</tr>
+<tr>
+<td><code>-/+</code></td>
+<td>再作成（破壊的変更）</td>
+<td><strong>最高</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>見慣れない差分が出たら絶対にapplyしない</strong></p>
+<p><strong>例</strong>:</p>
+<pre><code># 安全な変更
+~ aws_instance.web
+    tags.Environment: &quot;dev&quot; -&gt; &quot;development&quot;
+
+# 危険な変更（再作成）
+-/+ aws_instance.web (new resource required)
+    ami: &quot;ami-123&quot; -&gt; &quot;ami-456&quot;
+
+# 最も危険（削除）
+- aws_db_instance.main
+</code></pre>
+<hr />
+<h3 id="3-init">3. initが必要になるタイミング</h3>
+<pre><code class="language-bash"># これらの変更後はinitが必要
+terraform init
+</code></pre>
+<ul>
+<li>providerの追加・変更・バージョンアップ</li>
+<li>新しいmoduleの追加</li>
+<li>backend設定の変更（S3、DynamoDB等）</li>
+<li><code>.terraform/</code>ディレクトリの削除後</li>
+</ul>
+<hr />
+<h3 id="4-statedevstgprod">4. stateの分離（dev/stg/prod）</h3>
+<p><strong>方法1: ディレクトリ分離</strong></p>
+<pre><code>terraform/
+├── dev/
+│   ├── main.tf
+│   └── terraform.tfstate
+├── stg/
+│   ├── main.tf
+│   └── terraform.tfstate
+└── prod/
+    ├── main.tf
+    └── terraform.tfstate
+</code></pre>
+<p><strong>方法2: ワークスペース分離</strong></p>
+<pre><code class="language-bash">terraform workspace new dev
+terraform workspace new stg
+terraform workspace new prod
+</code></pre>
+<p><strong>方法3: backend key分離（推奨）</strong></p>
+<pre><code class="language-hcl"># dev/backend.tf
+terraform {
+  backend &quot;s3&quot; {
+    bucket = &quot;my-terraform-state&quot;
+    key    = &quot;dev/terraform.tfstate&quot;
+    region = &quot;ap-northeast-1&quot;
+  }
+}
+
+# prod/backend.tf
+terraform {
+  backend &quot;s3&quot; {
+    bucket = &quot;my-terraform-state&quot;
+    key    = &quot;prod/terraform.tfstate&quot;
+    region = &quot;ap-northeast-1&quot;
+  }
+}
+</code></pre>
+<hr />
+<h2 id="_13">トラブルシューティング</h2>
+<h3 id="_14">よくあるエラーと対処法</h3>
+<h4 id="1-state-lock">1. State lock取得エラー</h4>
+<pre><code>Error: Error acquiring the state lock
+</code></pre>
+<p><strong>原因</strong>: 別のterraformプロセスが実行中、または前回の異常終了</p>
+<p><strong>対処</strong>:</p>
+<pre><code class="language-bash"># ロック状況確認
+terraform force-unlock &lt;LOCK_ID&gt;
+
+# 最終手段（慎重に）
+terraform force-unlock -force &lt;LOCK_ID&gt;
+</code></pre>
+<h4 id="2-provider-not-found">2. Provider not found</h4>
+<pre><code>Error: Could not load plugin
+</code></pre>
+<p><strong>対処</strong>:</p>
+<pre><code class="language-bash"># 再初期化
+terraform init
+
+# プロバイダーを更新
+terraform init -upgrade
+</code></pre>
+<h4 id="3">3. リソースが見つからない</h4>
+<pre><code>Error: Error reading: Resource not found
+</code></pre>
+<p><strong>対処</strong>:</p>
+<pre><code class="language-bash"># stateから削除
+terraform state rm &lt;resource&gt;
+
+# または再インポート
+terraform import &lt;resource&gt; &lt;id&gt;
+
+# stateを最新化
+terraform refresh
+</code></pre>
+<h4 id="4">4. 依存関係エラー</h4>
+<pre><code>Error: Cycle: resource depends on itself
+</code></pre>
+<p><strong>対処</strong>:
+- 循環参照を確認
+- <code>depends_on</code>の見直し
+- リソース定義の順序を変更</p>
+<hr />
+<h2 id="_15">注意事項（最重要）</h2>
+<h3 id="apply">⚠️ いつもと違うメッセージが出たら絶対にapplyしない</h3>
+<p>Terraformの事故は99%「planの見落とし」が原因。</p>
+<p><strong>絶対に立ち止まるべきサイン</strong>:</p>
+<p>❌ <strong>見慣れない差分</strong></p>
+<pre><code>-/+ aws_rds_instance.main (forces replacement)
+</code></pre>
+<p>❌ <strong>リソースの大量な再作成</strong></p>
+<pre><code>Plan: 10 to add, 0 to change, 10 to destroy.
+</code></pre>
+<p>❌ <strong>重要リソースの削除</strong></p>
+<pre><code>- aws_db_instance.production
+- aws_lb.main
+- aws_s3_bucket.important_data
+</code></pre>
+<p>❌ <strong>予期しない属性変更</strong></p>
+<pre><code>~ aws_security_group.main
+    ingress: [...] -&gt; [] (all rules removed)
+</code></pre>
+<h3 id="_16">✅ チェックリスト</h3>
+<p>apply前に必ず確認:
+- [ ] planの差分を最初から最後まで読んだ
+- [ ] <code>-/+</code>（再作成）が無いか確認した
+- [ ] 削除対象に重要リソースが無いか確認した
+- [ ] 変更内容が意図通りか理解した
+- [ ] 本番環境なら上長/チームの承認を得た
+- [ ] バックアップ/ロールバック手順を確認した</p>
+<hr />
+<h2 id="_17">便利なエイリアス設定</h2>
+<pre><code class="language-bash"># ~/.bashrc または ~/.zshrc に追加
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+alias tfd='terraform destroy'
+alias tff='terraform fmt -recursive'
+alias tfv='terraform validate'
+alias tfo='terraform output'
+alias tfs='terraform state'
+alias tfsl='terraform state list'
+alias tfsh='terraform state show'
+alias tfw='terraform workspace'
+</code></pre>
+<hr />
+<h2 id="_18">まとめ</h2>
+<h3 id="terraform">Terraformの本質</h3>
+<p>Terraformの本質は<strong>「差分管理」</strong>。</p>
+<pre><code>コード (.tf) + 実インフラ (AWS) + State (.tfstate) = 差分
+</code></pre>
+<h3 id="_19">成功の鍵</h3>
+<ol>
+<li><strong>planを必ず読む</strong> - これだけで99%の事故は防げる</li>
+<li><strong>小さく頻繁にapply</strong> - 一度に大量の変更を避ける</li>
+<li><strong>stateを保護する</strong> - リモートbackend + state locking</li>
+<li><strong>環境を分離する</strong> - dev/stg/prodでstateを分ける</li>
+<li><strong>手動変更を避ける</strong> - 全てをコード化する</li>
+</ol>
+<h3 id="_20">事故を防ぐ心構え</h3>
+<blockquote>
+<p>「いつもと違う」と感じたら、<strong>必ず立ち止まる</strong></p>
+</blockquote>
+<ul>
+<li>見慣れないメッセージ</li>
+<li>予想外の差分</li>
+<li>大量の再作成</li>
+<li>重要リソースの削除</li>
+</ul>
+<p><strong>これらは全て危険信号。applyする前に必ず確認すること。</strong></p>
+<hr />
+<h2 id="_21">参考リンク</h2>
+<ul>
+<li><a href="https://developer.hashicorp.com/terraform">Terraform公式ドキュメント</a></li>
+<li><a href="https://registry.terraform.io/providers/hashicorp/aws/latest/docs">Terraform AWS Provider</a></li>
+<li><a href="https://www.terraform-best-practices.com/">Terraform Best Practices</a></li>
+</ul>
 
 
 
