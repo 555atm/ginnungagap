@@ -87,6 +87,8 @@ git push
 
 ### 3. 自動化
 
+**手動作業の手間が不要に**
+
 ```yaml
 # template.yaml
 Resources:
@@ -98,11 +100,21 @@ Resources:
   MySubnet:
     Type: AWS::EC2::Subnet
     Properties:
-      VpcId: !Ref MyVPC    # ← 自動で関連付け
+      VpcId: !Ref MyVPC    # ← VPC IDを自動で参照
       CidrBlock: 10.0.1.0/24
-
-# VPCとSubnetの依存関係を自動解決！
 ```
+
+**手動の場合**:
+1. VPCを作成
+2. 作成されたVPC ID（vpc-xxxxx）をメモ
+3. Subnetを作成する際に、手動でVPC IDを入力
+4. Security Groupを作成する際に、また手動でVPC IDを入力
+5. ...（毎回コピペが必要）
+
+**CloudFormationの場合**:
+- `!Ref MyVPC` と書くだけで自動的にVPC IDが使われる
+- コピペ不要！ミスも発生しない！
+- 依存関係も自動で解決（VPC → Subnet → EC2の順に作成される）
 
 ### 4. ドキュメント化
 
@@ -130,9 +142,10 @@ aws cloudformation delete-stack --stack-name my-web-app
 
 ## 🏗️ CloudFormationの基本概念
 
-### 1. テンプレート（Template）
+### 1. テンプレート（Template）とは
 
-**インフラの設計図**（YAML or JSON）
+**そのままインフラの設計図となる**（YAML or JSON）
+- 現在はYAML形式で作成するのが主流
 
 ```yaml
 # template.yaml
@@ -158,30 +171,45 @@ template.yaml → aws cloudformation create-stack → スタック作成
                                                     └── RDS
 ```
 
-**スタック = ライフサイクル管理の単位**
-- 作成（Create）
-- 更新（Update）
-- 削除（Delete）
+**スタック = まとめて操作できる単位**
+- **作成（Create）**: スタック作成 = 全リソースをまとめて作成
+- **更新（Update）**: スタック更新 = 変更されたリソースだけ更新
+- **削除（Delete）**: スタック削除 = 全リソースをまとめて削除
 
-### 3. リソース（Resource）
+**メリット**: 
+- 個別にリソースを削除する必要なし
+- 削除忘れによる課金の心配なし
+- 1コマンドで環境全体を削除可能
+
+---
+
+### 3. リソース（Resource）- 必須セクション
 
 **作成されるAWSサービスの実体**
 
 ```yaml
-Resources:
-  MyEC2Instance:        # ← リソース論理名（テンプレート内で使う名前）
-    Type: AWS::EC2::Instance    # ← リソースタイプ
-    Properties:
+Resources:                      # ← このセクションは必須！
+  MyEC2Instance:                # ← リソース論理名（任意の名前）
+    Type: AWS::EC2::Instance    # ← リソースタイプ（必須）
+    Properties:                 # ← プロパティ（リソースごとに異なる）
       ImageId: ami-xxxxx
       InstanceType: t3.small
 ```
 
-### 4. パラメータ（Parameter）
+**必須要素**:
+- `Resources`: セクション自体が必須
+- `Type`: 各リソースに必須
+- `Properties`: リソースの設定（多くは必須）
+
+---
+
+### 4. パラメータ（Parameter）- 任意セクション
 
 **実行時に指定する変数**
+何度も登場する値、状況によって値を使い分けたいものなどは、ここに追記していく楽になる。
 
 ```yaml
-Parameters:
+Parameters:               # 任意セクション
   Environment:
     Type: String
     Default: dev
@@ -196,7 +224,9 @@ Resources:
       # prod → mybucket-prod
 ```
 
-### 5. 出力（Output）
+---
+
+### 5. 出力（Output）- 任意セクション
 
 **作成されたリソース情報の出力**
 
@@ -207,12 +237,75 @@ Resources:
     Properties:
       CidrBlock: 10.0.0.0/16
 
-Outputs:
+Outputs:              # 任意セクション
   VpcId:
     Description: VPC ID
     Value: !Ref MyVPC
     # 出力: vpc-0123456789abcdef
 ```
+
+**用途**:
+- スタック作成後に値を確認
+- 他スタックで値を参照（Export使用）
+- CI/CDで値を取得
+
+---
+
+## 📝 現場で使う高度なセクション
+
+### 全セクション一覧
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'  # 推奨
+Description: 説明                        # 任意
+
+Metadata:             # 任意（パラメータグループ等のUI設定）
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: "Network Configuration"
+        Parameters:
+          - VpcCidr
+
+Parameters:           # 任意（入力パラメータ）
+  VpcCidr:
+    Type: String
+
+Mappings:             # 任意（キー・バリューマップ）
+  EnvironmentMap:
+    dev:
+      InstanceType: t3.small
+    prod:
+      InstanceType: m5.large
+
+Conditions:           # 任意（条件分岐）
+  IsProduction: !Equals [!Ref Environment, prod]
+
+Resources:            # 必須⭐
+  MyVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+
+Outputs:              # 任意（出力値）
+  VpcId:
+    Value: !Ref MyVPC
+```
+
+### セクション詳細
+
+| セクション | 必須 | 用途 | 学習 |
+|----------|------|------|------|
+| `AWSTemplateFormatVersion` | 推奨 | テンプレート形式バージョン | 初級 |
+| `Description` | 任意 | テンプレート説明 | 初級 |
+| `Metadata` | 任意 | UI設定・メタ情報 | 中級 |
+| `Parameters` | 任意 | 入力パラメータ | 初級 |
+| `Mappings` | 任意 | 環境別設定マップ | 初級 |
+| `Conditions` | 任意 | 条件分岐 | 初級 |
+| **`Resources`** | **必須⭐** | **作成するリソース** | **初級** |
+| `Outputs` | 任意 | 出力値 | 初級 |
+
+💡 **詳細**: [チートシート](99-beginner-cheatsheet.md) と [02. 基本構文](02-basic-syntax.md) を参照
 
 ---
 
