@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../01-cfn-basics/">
+        <link rel="prev" href="../07-before-after-guide/">
       
       
-        <link rel="next" href="../../intermediate/">
+        <link rel="next" href="../yaml-guide-for-cfn/">
       
       
         
@@ -1275,6 +1275,174 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-basic-syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02. テンプレート基本構文
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-parameters-mappings-conditions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    03. Parameters, Mappings, Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-intrinsic-functions-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    04. 組み込み関数（基礎）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-outputs-imports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    05. Outputs と ImportValue
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-sample-templates-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    06. 基礎サンプルテンプレート集
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-before-after-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07. Before/After実践ガイド
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1374,10 +1542,60 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="📄 テンプレート基本構造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小構成（必須のみ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実務での標準構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全セクション構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 セクション一覧（必須・任意の区別）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔤 基本データ型
@@ -1522,7 +1740,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         基本形
@@ -1560,7 +1778,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         🏗️ よく使うリソース
@@ -1643,7 +1861,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         🎛️ 疑似パラメータ
@@ -1654,7 +1872,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔄 基本コマンド
@@ -1666,7 +1884,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック作成
@@ -1677,7 +1895,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック更新
@@ -1688,7 +1906,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック削除
@@ -1699,7 +1917,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック状態確認
@@ -1710,7 +1928,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       
         テンプレート検証
@@ -1726,7 +1944,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         ✅ 初級チェックリスト
@@ -1738,7 +1956,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         基本知識
@@ -1749,7 +1967,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         組み込み関数
@@ -1760,7 +1978,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         リソース作成
@@ -1771,7 +1989,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック操作
@@ -1782,7 +2000,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック間連携
@@ -1798,7 +2016,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         🚨 よくあるエラーと対処法
@@ -1859,7 +2077,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         📚 次のステップ
@@ -1871,7 +2089,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       
         初級編を完了したら
@@ -1890,6 +2108,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yaml-guide-for-cfn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YAML補足資料 - CloudFormation版
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -25036,10 +25282,60 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="📄 テンプレート基本構造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小構成（必須のみ）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        実務での標準構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        全セクション構成
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 セクション一覧（必須・任意の区別）
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔤 基本データ型
@@ -25184,7 +25480,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         基本形
@@ -25222,7 +25518,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       
         🏗️ よく使うリソース
@@ -25305,7 +25601,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     <span class="md-ellipsis">
       
         🎛️ 疑似パラメータ
@@ -25316,7 +25612,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     <span class="md-ellipsis">
       
         🔄 基本コマンド
@@ -25328,7 +25624,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック作成
@@ -25339,7 +25635,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック更新
@@ -25350,7 +25646,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック削除
@@ -25361,7 +25657,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック状態確認
@@ -25372,7 +25668,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
+  <a href="#_16" class="md-nav__link">
     <span class="md-ellipsis">
       
         テンプレート検証
@@ -25388,7 +25684,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
+  <a href="#_17" class="md-nav__link">
     <span class="md-ellipsis">
       
         ✅ 初級チェックリスト
@@ -25400,7 +25696,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_14" class="md-nav__link">
+  <a href="#_18" class="md-nav__link">
     <span class="md-ellipsis">
       
         基本知識
@@ -25411,7 +25707,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_15" class="md-nav__link">
+  <a href="#_19" class="md-nav__link">
     <span class="md-ellipsis">
       
         組み込み関数
@@ -25422,7 +25718,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_16" class="md-nav__link">
+  <a href="#_20" class="md-nav__link">
     <span class="md-ellipsis">
       
         リソース作成
@@ -25433,7 +25729,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_17" class="md-nav__link">
+  <a href="#_21" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック操作
@@ -25444,7 +25740,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_18" class="md-nav__link">
+  <a href="#_22" class="md-nav__link">
     <span class="md-ellipsis">
       
         スタック間連携
@@ -25460,7 +25756,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_19" class="md-nav__link">
+  <a href="#_23" class="md-nav__link">
     <span class="md-ellipsis">
       
         🚨 よくあるエラーと対処法
@@ -25521,7 +25817,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_20" class="md-nav__link">
+  <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       
         📚 次のステップ
@@ -25533,7 +25829,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_21" class="md-nav__link">
+  <a href="#_25" class="md-nav__link">
     <span class="md-ellipsis">
       
         初級編を完了したら
@@ -25579,59 +25875,150 @@
 </ul>
 <hr />
 <h2 id="_2">📄 テンプレート基本構造</h2>
-<pre><code class="language-yaml">AWSTemplateFormatVersion: '2010-09-09'
-Description: テンプレートの説明
+<h3 id="_3">最小構成（必須のみ）</h3>
+<pre><code class="language-yaml">Resources:              # ← これだけあれば動く！
+  MyBucket:
+    Type: AWS::S3::Bucket
+</code></pre>
+<h3 id="_4">実務での標準構成</h3>
+<pre><code class="language-yaml">AWSTemplateFormatVersion: '2010-09-09'    # 推奨（省略可能）
+Description: テンプレートの説明               # 任意
+
+Parameters:           # 任意（実行時に値を指定したい場合）
+  Environment:
+    Type: String
+    Default: dev
+
+Resources:            # 必須⭐
+  MyBucket:
+    Type: AWS::S3::Bucket
+
+Outputs:              # 任意（値を出力したい場合）
+  BucketName:
+    Value: !Ref MyBucket
+</code></pre>
+<h3 id="_5">全セクション構成</h3>
+<pre><code class="language-yaml">AWSTemplateFormatVersion: '2010-09-09'  # 推奨
+Description: テンプレートの説明            # 任意
 
 # ==========================================
-# Parameters: 入力パラメータ（実行時に指定）
+# Metadata: メタ情報（任意）
+# ==========================================
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups: [...]
+
+# ==========================================
+# Parameters: 入力パラメータ（任意）
 # ==========================================
 Parameters:
-  環境名:
+  Environment:
     Type: String
     Default: dev
 
 # ==========================================
-# Mappings: 環境別の設定値マップ
+# Mappings: 環境別の設定値マップ（任意）
 # ==========================================
 Mappings:
-  環境別設定:
+  EnvironmentMap:
     dev:
       InstanceType: t3.small
     prod:
       InstanceType: m5.large
 
 # ==========================================
-# Conditions: 条件分岐
+# Conditions: 条件分岐（任意）
 # ==========================================
 Conditions:
-  本番環境か: !Equals [!Ref 環境名, prod]
+  IsProduction: !Equals [!Ref Environment, prod]
 
 # ==========================================
-# Resources: 作成するAWSリソース（必須）
+# Resources: 作成するAWSリソース（必須⭐）
 # ==========================================
 Resources:
-  リソース論理名:
-    Type: AWS::サービス名::リソースタイプ
+  MyBucket:
+    Type: AWS::S3::Bucket
     Properties:
-      プロパティ1: 値
-      プロパティ2: 値
+      BucketName: mybucket
 
 # ==========================================
-# Outputs: 出力値（他スタックから参照可能）
+# Outputs: 出力値（任意）
 # ==========================================
 Outputs:
-  出力名:
-    Description: 説明
-    Value: 値
+  BucketName:
+    Description: S3 Bucket Name
+    Value: !Ref MyBucket
     Export:
-      Name: エクスポート名
+      Name: !Sub '${AWS::StackName}-BucketName'
 </code></pre>
-<p><strong>セクション優先順位</strong>:
-1. <strong>Resources</strong>: 必須
-2. Parameters, Outputs: ほぼ必須
-3. Mappings, Conditions: 必要に応じて</p>
 <hr />
-<h2 id="_3">🔤 基本データ型</h2>
+<h2 id="_6">📋 セクション一覧（必須・任意の区別）</h2>
+<table>
+<thead>
+<tr>
+<th>セクション</th>
+<th>必須</th>
+<th>説明</th>
+<th>学習レベル</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AWSTemplateFormatVersion</code></td>
+<td>推奨</td>
+<td>テンプレート形式バージョン</td>
+<td>初級</td>
+</tr>
+<tr>
+<td><code>Description</code></td>
+<td>任意</td>
+<td>テンプレート説明</td>
+<td>初級</td>
+</tr>
+<tr>
+<td><code>Metadata</code></td>
+<td>任意</td>
+<td>UI設定・メタ情報</td>
+<td>中級</td>
+</tr>
+<tr>
+<td><code>Parameters</code></td>
+<td>任意</td>
+<td>入力パラメータ</td>
+<td>初級</td>
+</tr>
+<tr>
+<td><code>Mappings</code></td>
+<td>任意</td>
+<td>環境別設定マップ</td>
+<td>初級</td>
+</tr>
+<tr>
+<td><code>Conditions</code></td>
+<td>任意</td>
+<td>条件分岐</td>
+<td>初級</td>
+</tr>
+<tr>
+<td><strong><code>Resources</code></strong></td>
+<td><strong>必須⭐</strong></td>
+<td><strong>作成するリソース</strong></td>
+<td><strong>初級</strong></td>
+</tr>
+<tr>
+<td><code>Outputs</code></td>
+<td>任意</td>
+<td>出力値</td>
+<td>初級</td>
+</tr>
+</tbody>
+</table>
+<p><strong>ポイント</strong>:
+1. <strong>Resources</strong>: これだけは必須！
+2. <strong>Parameters, Outputs</strong>: 実務ではほぼ必須
+3. <strong>Mappings, Conditions</strong>: 環境別設定で使用</p>
+<hr />
+<h2 id="_7">🔤 基本データ型</h2>
 <h3 id="parameters-type">Parameters で使える Type</h3>
 <table>
 <thead>
@@ -25876,7 +26263,7 @@ Resources:
 </code></pre>
 <hr />
 <h2 id="outputs">📤 Outputs（出力値）</h2>
-<h3 id="_4">基本形</h3>
+<h3 id="_8">基本形</h3>
 <pre><code class="language-yaml">Outputs:
   VpcId:
     Description: VPC ID
@@ -25909,7 +26296,7 @@ Resources:
 </code></pre>
 <p><strong>重要</strong>: Export している値は、参照されている間は削除・変更不可！</p>
 <hr />
-<h2 id="_5">🏗️ よく使うリソース</h2>
+<h2 id="_9">🏗️ よく使うリソース</h2>
 <h3 id="vpc">VPC</h3>
 <pre><code class="language-yaml">Resources:
   MyVPC:
@@ -26018,7 +26405,7 @@ Resources:
         - !Ref DBSecurityGroup
 </code></pre>
 <hr />
-<h2 id="_6">🎛️ 疑似パラメータ</h2>
+<h2 id="_10">🎛️ 疑似パラメータ</h2>
 <p>テンプレート内で自動的に使える変数</p>
 <table>
 <thead>
@@ -26070,23 +26457,23 @@ Resources:
       DisplayName: !Sub 'Topic in account ${AWS::AccountId}'
 </code></pre>
 <hr />
-<h2 id="_7">🔄 基本コマンド</h2>
-<h3 id="_8">スタック作成</h3>
+<h2 id="_11">🔄 基本コマンド</h2>
+<h3 id="_12">スタック作成</h3>
 <pre><code class="language-bash">aws cloudformation create-stack \
   --stack-name my-stack \
   --template-body file://template.yaml \
   --parameters ParameterKey=Environment,ParameterValue=dev
 </code></pre>
-<h3 id="_9">スタック更新</h3>
+<h3 id="_13">スタック更新</h3>
 <pre><code class="language-bash">aws cloudformation update-stack \
   --stack-name my-stack \
   --template-body file://template.yaml \
   --parameters ParameterKey=Environment,ParameterValue=prod
 </code></pre>
-<h3 id="_10">スタック削除</h3>
+<h3 id="_14">スタック削除</h3>
 <pre><code class="language-bash">aws cloudformation delete-stack --stack-name my-stack
 </code></pre>
-<h3 id="_11">スタック状態確認</h3>
+<h3 id="_15">スタック状態確認</h3>
 <pre><code class="language-bash">aws cloudformation describe-stacks --stack-name my-stack
 
 # 出力値確認
@@ -26094,19 +26481,19 @@ aws cloudformation describe-stacks \
   --stack-name my-stack \
   --query 'Stacks[0].Outputs'
 </code></pre>
-<h3 id="_12">テンプレート検証</h3>
+<h3 id="_16">テンプレート検証</h3>
 <pre><code class="language-bash">aws cloudformation validate-template \
   --template-body file://template.yaml
 </code></pre>
 <hr />
-<h2 id="_13">✅ 初級チェックリスト</h2>
-<h3 id="_14">基本知識</h3>
+<h2 id="_17">✅ 初級チェックリスト</h2>
+<h3 id="_18">基本知識</h3>
 <ul>
 <li>[ ] CloudFormationとは何か説明できる</li>
 <li>[ ] YAML構文でテンプレートを書ける</li>
 <li>[ ] Parameters, Resources, Outputs の役割を理解した</li>
 </ul>
-<h3 id="_15">組み込み関数</h3>
+<h3 id="_19">組み込み関数</h3>
 <ul>
 <li>[ ] !Ref でリソース・パラメータを参照できる</li>
 <li>[ ] !GetAtt でリソース属性を取得できる</li>
@@ -26114,7 +26501,7 @@ aws cloudformation describe-stacks \
 <li>[ ] !Join でリスト結合ができる</li>
 <li>[ ] !Select でリスト要素を取得できる</li>
 </ul>
-<h3 id="_16">リソース作成</h3>
+<h3 id="_20">リソース作成</h3>
 <ul>
 <li>[ ] VPC を作成できる</li>
 <li>[ ] Subnet を作成できる</li>
@@ -26122,21 +26509,21 @@ aws cloudformation describe-stacks \
 <li>[ ] EC2 を作成できる</li>
 <li>[ ] RDS を作成できる</li>
 </ul>
-<h3 id="_17">スタック操作</h3>
+<h3 id="_21">スタック操作</h3>
 <ul>
 <li>[ ] AWS CLI でスタック作成できる</li>
 <li>[ ] スタック更新ができる</li>
 <li>[ ] スタック削除ができる</li>
 <li>[ ] スタック状態を確認できる</li>
 </ul>
-<h3 id="_18">スタック間連携</h3>
+<h3 id="_22">スタック間連携</h3>
 <ul>
 <li>[ ] Outputs で値を出力できる</li>
 <li>[ ] Export で値をエクスポートできる</li>
 <li>[ ] ImportValue で他スタックから参照できる</li>
 </ul>
 <hr />
-<h2 id="_19">🚨 よくあるエラーと対処法</h2>
+<h2 id="_23">🚨 よくあるエラーと対処法</h2>
 <h3 id="1-create_failed-">1. <code>CREATE_FAILED</code> - リソース作成失敗</h3>
 <p><strong>原因</strong>: プロパティ値が不正、権限不足、クォータ超過</p>
 <p><strong>対処</strong>:</p>
@@ -26159,10 +26546,10 @@ aws logs tail /aws/cloudformation/my-stack --follow
 <p><strong>原因</strong>: Export を他スタックが参照している</p>
 <p><strong>対処</strong>: 参照元スタックを先に削除</p>
 <hr />
-<h2 id="_20">📚 次のステップ</h2>
-<h3 id="_21">初級編を完了したら</h3>
+<h2 id="_24">📚 次のステップ</h2>
+<h3 id="_25">初級編を完了したら</h3>
 <ol>
-<li>✅ <a href="07-before-after-guide.md">Before/Afterガイド</a> で実践</li>
+<li>✅ <a href="../07-before-after-guide/">Before/Afterガイド</a> で実践</li>
 <li>✅ <a href="../../intermediate/99-intermediate-cheatsheet.md">中級チートシート</a> へ進む</li>
 <li>✅ 実際のプロジェクトで適用</li>
 </ol>
